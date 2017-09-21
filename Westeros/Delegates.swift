@@ -11,7 +11,7 @@ import UIKit
     
 class BaseViewControllerDelegate<Element>: NSObject {
     var source: ArrayDataSource<Element>?
-    var viewController: UIViewController?
+    weak var viewController: UIViewController?
 }
 final class GreatHousesDelegate: BaseViewControllerDelegate<House>, UITableViewDelegate {
         
