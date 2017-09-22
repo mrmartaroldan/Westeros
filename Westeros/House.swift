@@ -8,21 +8,18 @@
 
 import UIKit
 
-
-
 typealias Words = String
-typealias Name = String
 typealias Members = Set<Person>
 
 final class House{
     
-    let name  : Name
+    let name  : String
     let sigil : Sigil
     let words : Words
     let wikiURL : URL
     var _members : Members
     
-    init(name: Name, sigil: Sigil, words: Words, url: URL) {
+    init(name: String, sigil: Sigil, words: Words, url: URL) {
         (self.name, self.sigil, self.words, wikiURL) = (name, sigil, words, url)
         _members = Members()
     }
