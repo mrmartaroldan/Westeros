@@ -7,6 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		2E249A501F7403B7001EA171 /* Delegates.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E249A4F1F7403B7001EA171 /* Delegates.swift */; };
+		2E249A511F740DD4001EA171 /* ArrayDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E249A4D1F7400BA001EA171 /* ArrayDataSource.swift */; };
+		2E249A521F740DD9001EA171 /* DataSources.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E249A4E1F7400C9001EA171 /* DataSources.swift */; };
+		2E249A581F7415F4001EA171 /* ArrayTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E249A571F7415F4001EA171 /* ArrayTableViewController.swift */; };
 		ED21610D1F03C7C100609D8D /* HouseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED21610B1F03C7C100609D8D /* HouseViewController.swift */; };
 		ED21610E1F03C7C100609D8D /* HouseViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = ED21610C1F03C7C100609D8D /* HouseViewController.xib */; };
 		ED2161121F03EB1300609D8D /* UIKitExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED2161111F03EB1300609D8D /* UIKitExtensions.swift */; };
@@ -37,6 +41,10 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		2E249A4D1F7400BA001EA171 /* ArrayDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArrayDataSource.swift; sourceTree = "<group>"; };
+		2E249A4E1F7400C9001EA171 /* DataSources.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataSources.swift; sourceTree = "<group>"; };
+		2E249A4F1F7403B7001EA171 /* Delegates.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Delegates.swift; sourceTree = "<group>"; };
+		2E249A571F7415F4001EA171 /* ArrayTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArrayTableViewController.swift; sourceTree = "<group>"; };
 		ED21610B1F03C7C100609D8D /* HouseViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HouseViewController.swift; sourceTree = "<group>"; };
 		ED21610C1F03C7C100609D8D /* HouseViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = HouseViewController.xib; sourceTree = "<group>"; };
 		ED2161111F03EB1300609D8D /* UIKitExtensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIKitExtensions.swift; sourceTree = "<group>"; };
@@ -78,6 +86,16 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		2E249A4C1F740076001EA171 /* Generics */ = {
+			isa = PBXGroup;
+			children = (
+				2E249A4E1F7400C9001EA171 /* DataSources.swift */,
+				2E249A4D1F7400BA001EA171 /* ArrayDataSource.swift */,
+				2E249A4F1F7403B7001EA171 /* Delegates.swift */,
+			);
+			name = Generics;
+			sourceTree = "<group>";
+		};
 		ED21610F1F03EABC00609D8D /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
@@ -103,10 +121,12 @@
 		EDA177A71F03C30F0001D09B /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				2E249A4C1F740076001EA171 /* Generics */,
 				ED21610B1F03C7C100609D8D /* HouseViewController.swift */,
 				ED21610C1F03C7C100609D8D /* HouseViewController.xib */,
 				EDB4B1F01F09149400CB2FBF /* WikiViewController.swift */,
 				EDB4B1F11F09149400CB2FBF /* WikiViewController.xib */,
+				2E249A571F7415F4001EA171 /* ArrayTableViewController.swift */,
 			);
 			name = Controllers;
 			sourceTree = "<group>";
@@ -214,17 +234,19 @@
 			isa = PBXProject;
 			attributes = {
 				LastSwiftUpdateCheck = 0830;
-				LastUpgradeCheck = 0830;
+				LastUpgradeCheck = 0900;
 				ORGANIZATIONNAME = Keepcoding;
 				TargetAttributes = {
 					EDEC5D511F026DDA00B6A305 = {
 						CreatedOnToolsVersion = 8.3.3;
-						DevelopmentTeam = L74TMB66P4;
+						DevelopmentTeam = ZQ8XF6X2TZ;
+						LastSwiftMigration = 0900;
 						ProvisioningStyle = Automatic;
 					};
 					EDEC5D651F026DDA00B6A305 = {
 						CreatedOnToolsVersion = 8.3.3;
 						DevelopmentTeam = L74TMB66P4;
+						LastSwiftMigration = 0900;
 						ProvisioningStyle = Automatic;
 						TestTargetID = EDEC5D511F026DDA00B6A305;
 					};
@@ -277,10 +299,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2E249A581F7415F4001EA171 /* ArrayTableViewController.swift in Sources */,
+				2E249A521F740DD9001EA171 /* DataSources.swift in Sources */,
+				2E249A511F740DD4001EA171 /* ArrayDataSource.swift in Sources */,
 				EDEC5D801F02D9F800B6A305 /* Person.swift in Sources */,
 				EDEC5D791F02D4DE00B6A305 /* House.swift in Sources */,
 				EDEC5D561F026DDA00B6A305 /* AppDelegate.swift in Sources */,
 				ED21610D1F03C7C100609D8D /* HouseViewController.swift in Sources */,
+				2E249A501F7403B7001EA171 /* Delegates.swift in Sources */,
 				ED2161121F03EB1300609D8D /* UIKitExtensions.swift in Sources */,
 				ED2161181F041D3800609D8D /* Repository.swift in Sources */,
 				EDB4B1F21F09149400CB2FBF /* WikiViewController.swift in Sources */,
@@ -330,7 +356,9 @@
 				CLANG_CXX_LIBRARY = "libc++";
 				CLANG_ENABLE_MODULES = YES;
 				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
 				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
 				CLANG_WARN_CONSTANT_CONVERSION = YES;
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
@@ -338,7 +366,11 @@
 				CLANG_WARN_ENUM_CONVERSION = YES;
 				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
 				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
@@ -381,7 +413,9 @@
 				CLANG_CXX_LIBRARY = "libc++";
 				CLANG_ENABLE_MODULES = YES;
 				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
 				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
 				CLANG_WARN_CONSTANT_CONVERSION = YES;
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
@@ -389,7 +423,11 @@
 				CLANG_WARN_ENUM_CONVERSION = YES;
 				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
 				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
@@ -419,12 +457,13 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				DEVELOPMENT_TEAM = L74TMB66P4;
+				DEVELOPMENT_TEAM = ZQ8XF6X2TZ;
 				INFOPLIST_FILE = Westeros/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = io.keepcoding.Westeros;
+				PRODUCT_BUNDLE_IDENTIFIER = "Marta-Roldan-Arellano";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 3.0;
+				SWIFT_SWIFT3_OBJC_INFERENCE = On;
+				SWIFT_VERSION = 4.0;
 			};
 			name = Debug;
 		};
@@ -432,12 +471,13 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				DEVELOPMENT_TEAM = L74TMB66P4;
+				DEVELOPMENT_TEAM = ZQ8XF6X2TZ;
 				INFOPLIST_FILE = Westeros/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = io.keepcoding.Westeros;
+				PRODUCT_BUNDLE_IDENTIFIER = "Marta-Roldan-Arellano";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 3.0;
+				SWIFT_SWIFT3_OBJC_INFERENCE = On;
+				SWIFT_VERSION = 4.0;
 			};
 			name = Release;
 		};
@@ -451,7 +491,8 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = io.keepcoding.WesterosTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 3.0;
+				SWIFT_SWIFT3_OBJC_INFERENCE = On;
+				SWIFT_VERSION = 4.0;
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Westeros.app/Westeros";
 			};
 			name = Debug;
@@ -466,7 +507,8 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = io.keepcoding.WesterosTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 3.0;
+				SWIFT_SWIFT3_OBJC_INFERENCE = On;
+				SWIFT_VERSION = 4.0;
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Westeros.app/Westeros";
 			};
 			name = Release;

@@ -10,7 +10,7 @@ import UIKit
 
 // Dos funciones que devuelven las DataSources que necesitamos: Houses & Persons
 // La clase DataSources existe simplemente para agrupar dichas funciones
-final class DataSource{
+final class DataSources{
     static func housesDataSource(model: [House]) -> ArrayDataSource<House>{
         return ArrayDataSource(model: model) { (house:House, tableView: UITableView) -> UITableViewCell in
             let cellID = "House"

@@ -20,7 +20,7 @@ final class House{
     let sigil : Sigil
     let words : Words
     let wikiURL : URL
-    private var _members : Members
+    var _members : Members
     
     init(name: Name, sigil: Sigil, words: Words, url: URL) {
         (self.name, self.sigil, self.words, wikiURL) = (name, sigil, words, url)
@@ -61,7 +61,7 @@ extension House{
 
 // MARK : -  Proxies
 extension House{
-    private var _proxyForComparison : String{
+    var _proxyForComparison : String{
         return "\(name) \(words) \(sigil.description) \(wikiURL)"
     }
 }

@@ -40,11 +40,11 @@ extension Person{
 // MARK : -  Proxies
 extension Person{
     
-    private var _proxyForComparison : String{
+    var _proxyForComparison : String{
         return "\(fullName) \(house.name)"
     }
     
-    private var _proxyForHash : Int{
+    var _proxyForHash : Int{
         return _proxyForComparison.hash
     }
 }
