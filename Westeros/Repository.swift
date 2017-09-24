@@ -19,6 +19,13 @@ protocol HouseFactory {
     
     var houses : [House] {get}
     func house(named: String) -> House?
+    typealias FilterHouse = (House) -> Bool
+    func houses(filteredBy: FilterHouse) -> [House]
+    
+    var seasons : [Season] {get}
+    typealias FilterSeason = (Season) -> Bool
+    func seasons(filteredBy: FilterSeason) -> [Season]
+    
 }
 
 final class LocalFactory : HouseFactory{
@@ -46,14 +53,11 @@ final class LocalFactory : HouseFactory{
         let normalizedName = named.uppercased()
         let singleHouse = houses.filter{$0.name.uppercased() == normalizedName}
         return singleHouse.first
-        
     }
     
-    func season(title: String) -> Season? {
-    
-    	let normalizedTitle = title.uppercased()
-        let season = seasons.filter{ $0.name.uppercased() == normalizedTitle}
-        return season.first
+    func houses(filteredBy: FilterHouse) -> [House] {
+        let result = Repository.local.houses.filter(filteredBy)
+        return result
     }
     
 
@@ -100,4 +104,17 @@ final class LocalFactory : HouseFactory{
             t6.add(episodes: e601, e602)
             return [t1, t2, t3, t4, t5, t6]
         }
+    
+    func season(title: String) -> Season? {
+        
+        let normalizedTitle = title.uppercased()
+        let season = seasons.filter{ $0.name.uppercased() == normalizedTitle}
+        return season.first
+    }
+    
+    func seasons(filteredBy: FilterSeason) -> [Season] {
+        let result = Repository.local.seasons.filter(filteredBy)
+        return result
+    }
+    
 }
