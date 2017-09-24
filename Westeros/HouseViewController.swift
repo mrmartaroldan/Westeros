@@ -14,11 +14,11 @@ class HouseViewController: UIViewController {
     @IBOutlet weak var sigilView: UIImageView!
     @IBOutlet weak var wordsView: UILabel!
     
-    private let _model : House
+    let _model : House
     
     // MARK : -  Init
     init(model: House) {
-        _model = model
+        self._model = model
         super.init(nibName: nil, bundle: nil)
         title = "\(_model.name) (\(_model.sigil.description))"
         
@@ -42,9 +42,7 @@ class HouseViewController: UIViewController {
         
     }
     
-    // MARK : - Actions
     @objc func displayWiki(){
-        
         
         // Create a WikiVC
         let wVC = WikiViewController(model: _model)
@@ -53,13 +51,28 @@ class HouseViewController: UIViewController {
         navigationController?.pushViewController(wVC, animated: true)
     }
     
-    // MARK : - Misc
+    @objc func displayPerson(){
+        
+        //Create a PersonVC
+        let persons = _model.sortedMembers()
+        let dataSource = DataSources.personsDataSource(model: persons)
+        let personVC = ArrayTableViewController(arrayDataSource: dataSource,
+                                                title: "Persons",
+                                                style: .plain)
+        
+        // Push it & forget
+        navigationController?.pushViewController(personVC, animated: true)
+    }
+    
     func addButtons(){
     
         let wikiBtn = UIBarButtonItem(title: "Wiki", style: .plain
             , target: self, action: #selector(displayWiki))
+    
+        let personBtn = UIBarButtonItem(title: "Person", style: .plain, target: self,
+                                        action: #selector(displayPerson))
         
-        navigationItem.rightBarButtonItem = wikiBtn
+        navigationItem.rightBarButtonItems = [personBtn,wikiBtn]
     }
     
     
@@ -67,8 +80,6 @@ class HouseViewController: UIViewController {
         sigilView.image = _model.sigil.image
         nameView.text = "House \(_model.name)"
         wordsView.text = _model.words
-        
-        
     }
     
     
@@ -76,7 +87,4 @@ class HouseViewController: UIViewController {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
-    
-
-
 }

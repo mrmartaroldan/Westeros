@@ -19,19 +19,27 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         // Model
         let houses = Repository.local.houses
+        let seasons = Repository.local.seasons
         
         // Controllers
         let housesDataSource = DataSources.housesDataSource(model: houses)
         let housesVC = ArrayTableViewController(arrayDataSource: housesDataSource,
                                                 title: "Westeros",
                                                 style: .plain,
-                                                delegate:
-            GreatHousesDelegate()).wrappedInNavigation()
+                                                delegate: GreatHousesDelegate()).wrappedInNavigation()
         
+        let seasonsDataSource = DataSources.seasonsDataSource(model: seasons)
+        let seasonsVC = ArrayTableViewController(arrayDataSource: seasonsDataSource,
+                                                title: "Seasons",
+                                                style: .plain,
+                                                delegate: SeasonsDelegate()).wrappedInNavigation()
+        
+        let tabBarController = UITabBarController()
+        tabBarController.viewControllers = [housesVC, seasonsVC]
         
         // Window
         window = UIWindow(frame: UIScreen.main.bounds)
-        window?.rootViewController = housesVC
+        window?.rootViewController = tabBarController
         window?.backgroundColor = UIColor.orange
         window?.makeKeyAndVisible()
         

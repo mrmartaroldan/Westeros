@@ -25,3 +25,32 @@ final class GreatHousesDelegate: BaseViewControllerDelegate<House>, UITableViewD
     }
 }
 
+final class SeasonsDelegate: BaseViewControllerDelegate<Season>, UITableViewDelegate {
+    
+    public func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        if let season = source?.element(atIndexPath: indexPath),
+            let nav = viewController?.navigationController {
+            
+            let dataSource = DataSources.episodesDataSource(model: season.sortedEpisodes())
+            let vc = ArrayTableViewController(arrayDataSource: dataSource,
+                                              title: "Episodes",
+                                              style: .plain,
+                                              delegate: EpisodesDelegate())
+
+            nav.pushViewController(vc, animated: true)
+        }
+    }
+}
+
+final class EpisodesDelegate: BaseViewControllerDelegate<Episode>, UITableViewDelegate {
+    
+    public func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        if let episode = source?.element(atIndexPath: indexPath),
+            let nav = viewController?.navigationController {
+            
+            let vc = EpisodeViewController(model: episode)
+            nav.pushViewController(vc, animated: true)
+        }
+    }
+}
+ 

@@ -21,9 +21,12 @@ final class Season {
         _episodes = Episodes()
     }
     
+    func sortedEpisodes() -> [Episode] {
+        let episodes: [Episode] = Array(_episodes)
+        return episodes.sorted()
+    }
 }
 
-    
 extension Season {
 
     var count: Int {

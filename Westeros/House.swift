@@ -20,10 +20,14 @@ final class House{
     var _members : Members
     
     init(name: String, sigil: Sigil, words: Words, url: URL) {
-        (self.name, self.sigil, self.words, wikiURL) = (name, sigil, words, url)
+        (self.name, self.sigil, self.words, self.wikiURL) = (name, sigil, words, url)
         _members = Members()
     }
     
+    func sortedMembers() -> [Person] {
+        let members: [Person] = Array(_members)
+        return members.sorted()
+    }
 }
 
 final class Sigil{
@@ -61,6 +65,10 @@ extension House{
     var _proxyForComparison : String{
         return "\(name) \(words) \(sigil.description) \(wikiURL)"
     }
+    
+        var _proxyForHash : Int{
+        return _proxyForComparison.hash
+    }
 }
 
 // MARK : - Protocols
@@ -68,16 +76,18 @@ extension House : CustomStringConvertible{
     var description: String {
         return "<\(type(of:self)): \(name)>"
     }
-
 }
 
 extension House : Equatable{
     static func ==(lhs: House, rhs: House) -> Bool {
         return (lhs._proxyForComparison == rhs._proxyForComparison)
     }
+}
+    
+
 
     
-}
+
 
 
 

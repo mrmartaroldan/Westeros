@@ -19,3 +19,16 @@ extension String {
         return dateFormarted!
     }
 }
+
+extension Date {
+    func dateToString() -> String {
+        let stringDate = self
+        let stringDateFormat = DateFormatter()
+	
+	//Aplicamos el formato que queremos
+        stringDateFormat.dateStyle = .medium
+	stringDateFormat.timeStyle = .none
+        let dateFormartedToString = stringDateFormat.string(from: stringDate)
+        return dateFormartedToString
+    }
+}

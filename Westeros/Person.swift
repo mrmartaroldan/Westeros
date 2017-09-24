@@ -17,11 +17,9 @@ final class Person {
         get{
             return _alias ?? ""
         }
-        
     }
     
     init(name: String, alias: String?, house: House) {
-        
         (self.name, _alias, self.house) = (name, alias, house)
     }
     
@@ -55,24 +53,24 @@ extension Person : CustomStringConvertible{
     var description: String {
         return "<\(type(of: self)): \(fullName)>"
     }
-
-    
 }
 
 extension Person : Equatable{
     static func ==(lhs: Person, rhs: Person) -> Bool {
         return (lhs._proxyForComparison == rhs._proxyForComparison)
     }
-    
-    
 }
 
 extension Person : Hashable{
     var hashValue: Int {
         return _proxyForHash
     }
-
+}
     
+extension Person: Comparable {
+    static func <(lhs: Person, rhs: Person) -> Bool {
+        return lhs._proxyForComparison < rhs._proxyForComparison
+    }
 }
 
 

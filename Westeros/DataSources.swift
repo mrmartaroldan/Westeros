@@ -24,6 +24,7 @@ final class DataSources{
             return cell!
         }
     }
+    
     static func personsDataSource(model: [Person]) -> ArrayDataSource<Person>{
         return ArrayDataSource(model: model) { (person:Person, tableView: UITableView) -> UITableViewCell in
             let cellID = "Person"
@@ -32,6 +33,32 @@ final class DataSources{
                 cell = UITableViewCell(style: .default, reuseIdentifier: cellID)
             }
             cell?.textLabel?.text = person.fullName
+            return cell!
+        }
+    }
+    
+    static func seasonsDataSource(model: [Season]) -> ArrayDataSource<Season>{
+        return ArrayDataSource(model: model) { (season:Season, tableView: UITableView) -> UITableViewCell in
+            let cellID = "Season"
+            var cell = tableView.dequeueReusableCell(withIdentifier: cellID)
+            if cell == nil{
+                cell = UITableViewCell(style: .subtitle, reuseIdentifier: cellID)
+            }
+            cell?.textLabel?.text = season.name
+            cell?.detailTextLabel?.text = season.releaseDate.dateToString()
+            return cell!
+        }
+    }
+    
+    static func episodesDataSource(model: [Episode]) -> ArrayDataSource<Episode>{
+        return ArrayDataSource(model: model) { (episode:Episode, tableView: UITableView) -> UITableViewCell in
+            let cellID = "Episode"
+            var cell = tableView.dequeueReusableCell(withIdentifier: cellID)
+            if cell == nil{
+                cell = UITableViewCell(style: .default, reuseIdentifier: cellID)
+            }
+            cell?.textLabel?.text = episode.title
+            cell?.detailTextLabel?.text = episode.emissionDate.dateToString()
             return cell!
         }
     }
