@@ -31,6 +31,12 @@ class SeasonTests: XCTestCase {
         XCTAssertNotNil(season1)
     }
     
+    func testSeasonCustomStringConvertible() {
+        let s1: String = season1.description
+        XCTAssertEqual(s1, "Season 1. Start: 17 abr 2011")
+        XCTAssertNotEqual(s1, "Season 2. Start: 01 abr 2012")
+    }
+    
     func testSeasonEquality(){
         
         // Identidad

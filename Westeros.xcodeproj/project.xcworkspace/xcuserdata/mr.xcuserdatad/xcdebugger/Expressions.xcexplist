@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<VariablesViewState
+   version = "1.0">
+   <ContextStates>
+      <ContextState
+         contextName = "EpisodeViewController.syncViewWithModel():EpisodeViewController.swift">
+      </ContextState>
+      <ContextState
+         contextName = "SeasonTests.testSeasonCustomStringConvertible():SeasonTests.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "XCTAssertEqual(s1, &quot;Season 1. Start: 17 abr 2011&quot;)">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+   </ContextStates>
+</VariablesViewState>

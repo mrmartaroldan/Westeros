@@ -47,7 +47,7 @@ extension House{
     }
     
     func add(person: Person){
-        
+    
         guard person.house == self else{
             return
         }

@@ -37,6 +37,12 @@ class EpisodeTests: XCTestCase {
         super.tearDown()
     }
     
+    func testEpisodeCustomStringConvertible() {
+        let e1: String = episode1.description
+        XCTAssertEqual(e1, "Winter is coming. Premiere: 17 abr 2011")
+        XCTAssertNotEqual(e1, "The nord remembers. Premiere: 01 abr 2012")
+    }
+    
     func testEpisodeExistence(){
         XCTAssertNotNil(episode1)
     }
